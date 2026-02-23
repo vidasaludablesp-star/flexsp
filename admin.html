@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; }
+        .container { padding: 20px; }
+        .header { background: #007BFF; color: white; padding: 10px 0; text-align: center; }
+        .content { display: flex; }
+        .sidebar { width: 200px; background: #f4f4f4; padding: 15px; }
+        .main { flex: 1; padding: 15px; }
+        h1, h2, h3 { margin: 0; }
+        .chart { width: 100%; height: 300px; background: #e9ecef; margin: 20px 0; }
+        button { margin: 5px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Admin Panel</h1>
+        </div>
+        <div class="content">
+            <div class="sidebar">
+                <h2>Menu</h2>
+                <button onclick="showSection('dashboard')">Dashboard</button>
+                <button onclick="showSection('products')">Products</button>
+                <button onclick="showSection('orders')">Orders</button>
+                <button onclick="showSection('finance')">Finance Reports</button>
+            </div>
+            <div class="main" id="main-content">
+                <div id="login" style="display: none;">
+                    <h2>Login</h2>
+                    <input type="text" id="username" placeholder="Username"><br>
+                    <input type="password" id="password" placeholder="Password"><br>
+                    <button onclick="login()">Login</button>
+                </div>
+                <div id="dashboard" style="display: none;">
+                    <h2>Dashboard</h2>
+                    <div class="chart" id="chart-dashboard">Dashboard Charts Here</div>
+                </div>
+                <div id="products" style="display: none;">
+                    <h2>Product Management</h2>
+                    <p>Manage your products here.</p>
+                </div>
+                <div id="orders" style="display: none;">
+                    <h2>Order Management</h2>
+                    <p>Manage your orders here.</p>
+                </div>
+                <div id="finance" style="display: none;">
+                    <h2>Finance Reports</h2>
+                    <p>View finance reports here.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showSection(section) {
+            document.getElementById('login').style.display = 'none';
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('products').style.display = 'none';
+            document.getElementById('orders').style.display = 'none';
+            document.getElementById('finance').style.display = 'none';
+
+            if (section === 'dashboard') {
+                document.getElementById('dashboard').style.display = 'block';
+            } else if (section === 'products') {
+                document.getElementById('products').style.display = 'block';
+            } else if (section === 'orders') {
+                document.getElementById('orders').style.display = 'block';
+            } else if (section === 'finance') {
+                document.getElementById('finance').style.display = 'block';
+            }
+        }
+
+        function login() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            // Dummy login logic - normally you would handle this server-side
+            if (username === 'admin' && password === 'admin') {
+                showSection('dashboard');
+            } else {
+                alert('Invalid credentials!');
+            }
+        }
+
+        // Show login section initially
+        showSection('login');
+    </script>
+</body>
+</html>
