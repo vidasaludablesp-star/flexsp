@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sáenz Peña Delivery App</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS here -->
+</head>
+<body>
+    <header>
+        <h1>Sáenz Peña Delivery</h1>
+        <div class="login">
+            <h2>Login</h2>
+            <form id="loginForm">
+                <input type="email" placeholder="Email" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </header>
+
+    <main>
+        <section class="product-listings">
+            <h2>Store Listings</h2>
+            <div class="products">
+                <!-- Products will be dynamically loaded here -->
+            </div>
+        </section>
+
+        <section class="shopping-cart">
+            <h2>Shopping Cart</h2>
+            <div id="cart">
+                <!-- Cart items will be displayed here -->
+            </div>
+        </section>
+
+        <section class="search">
+            <h2>Search Products</h2>
+            <input type="text" placeholder="Search..." id="searchField">
+        </section>
+
+        <section class="category-filters">
+            <h2>Category Filters</h2>
+            <div id="filters">
+                <!-- Category filters will be added here -->
+            </div>
+        </section>
+
+        <footer>
+            <a href="https://wa.me/your_phone_number" target="_blank">Contact us on WhatsApp!</a>
+        </footer>
+    </main>
+
+    <script src="script.js"></script> <!-- Link to your JavaScript here -->
+</body>
+</html>
