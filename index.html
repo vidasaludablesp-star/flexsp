@@ -1,44 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sáenz Peña Delivery Application</title>
-    <link rel="stylesheet" href="styles.css">
-    <script defer src="script.js"></script>
+    <title>Sáenz Peña Delivery</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to Sáenz Peña Delivery!</h1>
-    </header>
-    <main>
-        <section id="menu">
-            <h2>Menu</h2>
+        <h1>Sáenz Peña Delivery</h1>
+        <nav>
             <ul>
-                <li>Pizza</li>
-                <li>Burgers</li>
-                <li>Sushi</li>
-                <li>Desserts</li>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#store">Store</a></li>
+                <li><a href="#cart">Shopping Cart</a></li>
+                <li><a href="#profile">User Profile</a></li>
             </ul>
-        </section>
-        <section id="order">
-            <h2>Place Your Order</h2>
+        </nav>
+    </header>
+    
+    <main>
+        <section id="login">
+            <h2>Login</h2>
             <form>
-                <label for="item">Select Item:</label>
-                <select id="item" name="item">
-                    <option value="pizza">Pizza</option>
-                    <option value="burger">Burger</option>
-                    <option value="sushi">Sushi</option>
-                    <option value="dessert">Dessert</option>
-                </select>
-                <label for="quantity">Quantity:</label>
-                <input type="number" id="quantity" name="quantity" min="1" value="1">
-                <button type="submit">Order</button>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required><br>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required><br>
+                <input type="submit" value="Login">
             </form>
         </section>
+        
+        <section id="store">
+            <h2>Store Listings</h2>
+            <input type="text" id="search" placeholder="Search for products...">
+            <div id="store-listings">
+                <div class="product">
+                    <img src="product1.jpg" alt="Product 1">
+                    <h3>Product 1</h3>
+                    <p>$10.00</p>
+                    <button>Add to Cart</button>
+                </div>
+                <div class="product">
+                    <img src="product2.jpg" alt="Product 2">
+                    <h3>Product 2</h3>
+                    <p>$12.00</p>
+                    <button>Add to Cart</button>
+                </div>
+                <!-- More products can be added here -->
+            </div>
+            <div id="categories">
+                <h3>Categories</h3>
+                <button>All</button>
+                <button>Food</button>
+                <button>Beverages</button>
+            </div>
+        </section>
+        
+        <section id="cart">
+            <h2>Shopping Cart</h2>
+            <div id="cart-items">
+                <p>No items in cart.</p>
+            </div>
+            <button>Checkout</button>
+        </section>
+        
+        <section id="profile">
+            <h2>User Profile</h2>
+            <p>Name: <span id="user-name">John Doe</span></p>
+            <p>Email: <span id="user-email">john@example.com</span></p>
+            <button>Edit Profile</button>
+        </section>
     </main>
+    
     <footer>
-        <p>&copy; 2026 Sáenz Peña Delivery. All Rights Reserved.</p>
+        <p>Contact us via <a href="https://wa.me/1234567890">WhatsApp</a></p>
     </footer>
 </body>
 </html>
